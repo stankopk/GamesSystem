@@ -47,5 +47,16 @@ namespace GamesSystem.View
             mainController.DeleteGame(id);
             RefreshTable();
         }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = dgvGames.CurrentRow;
+            int id = int.Parse(row.Cells[0].Value.ToString());
+            Game game = new Game();
+            game.Name = txtName.Text;
+            game.Price = double.Parse(txtPrice.Text);
+            mainController.UpdateGame(id, game);
+            RefreshTable();
+        }
     }
 }
