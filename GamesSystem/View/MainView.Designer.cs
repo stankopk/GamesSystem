@@ -41,6 +41,7 @@ namespace GamesSystem.View
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.btnCreate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGames)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gameBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -134,13 +135,24 @@ namespace GamesSystem.View
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(654, 126);
+            this.btnDelete.Location = new System.Drawing.Point(654, 246);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(121, 92);
             this.btnDelete.TabIndex = 7;
             this.btnDelete.Text = "Delete Game";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Location = new System.Drawing.Point(654, 126);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(121, 92);
+            this.btnUpdate.TabIndex = 8;
+            this.btnUpdate.Text = "Update Game";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // MainView
             // 
@@ -149,6 +161,7 @@ namespace GamesSystem.View
             this.BackgroundImage = global::GamesSystem.Properties.Resources.Background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.txtPrice);
@@ -179,5 +192,6 @@ namespace GamesSystem.View
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }

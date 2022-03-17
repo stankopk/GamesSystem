@@ -14,7 +14,7 @@ namespace GamesSystem.Controller
         {
             using (GamesDBEntities gdbe = new GamesDBEntities())
             {
-                g.Id = gdbe.Games.Count() + 1;
+                g.Id = gdbe.Games.ToList().LastOrDefault().Id + 1;
                 gdbe.Games.Add(g);
                 gdbe.SaveChanges();
             }
@@ -35,7 +35,20 @@ namespace GamesSystem.Controller
         }
 
         //Update - Dev 2
-
+        public void UpdateGame(int id, Game game)
+        {
+            using (GamesDBEntities gdbe = new GamesDBEntities())
+            {
+                var gameToUpdate = gdbe.Games.Where(g => g.Id == id).FirstOrDefault();
+                if (gameToUpdate != null)
+                {
+                    gameToUpdate.Id = id;
+                    gameToUpdate.Name = game.Name;
+                    gameToUpdate.Price = game.Price;
+                    gdbe.SaveChanges();
+                }
+            }
+        }
 
         //Read - Team Leader
         public List<Game> ShowAllGames()
