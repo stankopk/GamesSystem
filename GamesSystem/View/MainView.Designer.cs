@@ -31,10 +31,15 @@ namespace GamesSystem.View
         {
             this.components = new System.ComponentModel.Container();
             this.dgvGames = new System.Windows.Forms.DataGridView();
-            this.gameBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lblName = new System.Windows.Forms.Label();
+            this.lblPrice = new System.Windows.Forms.Label();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtPrice = new System.Windows.Forms.TextBox();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gameBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnCreate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGames)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gameBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -53,9 +58,43 @@ namespace GamesSystem.View
             this.dgvGames.Size = new System.Drawing.Size(330, 205);
             this.dgvGames.TabIndex = 0;
             // 
-            // gameBindingSource
+            // lblName
             // 
-            this.gameBindingSource.DataSource = typeof(GamesSystem.Model.Game);
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Location = new System.Drawing.Point(389, 13);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(86, 31);
+            this.lblName.TabIndex = 1;
+            this.lblName.Text = "Name";
+            // 
+            // lblPrice
+            // 
+            this.lblPrice.AutoSize = true;
+            this.lblPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrice.Location = new System.Drawing.Point(389, 73);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(76, 31);
+            this.lblPrice.TabIndex = 2;
+            this.lblPrice.Text = "Price";
+            // 
+            // txtName
+            // 
+            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Location = new System.Drawing.Point(499, 12);
+            this.txtName.Multiline = true;
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(122, 32);
+            this.txtName.TabIndex = 3;
+            // 
+            // txtPrice
+            // 
+            this.txtPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrice.Location = new System.Drawing.Point(499, 73);
+            this.txtPrice.Multiline = true;
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Size = new System.Drawing.Size(122, 32);
+            this.txtPrice.TabIndex = 4;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -76,6 +115,21 @@ namespace GamesSystem.View
             this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
             this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
             // 
+            // gameBindingSource
+            // 
+            this.gameBindingSource.DataSource = typeof(GamesSystem.Model.Game);
+            // 
+            // btnCreate
+            // 
+            this.btnCreate.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreate.Location = new System.Drawing.Point(654, 12);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(121, 92);
+            this.btnCreate.TabIndex = 5;
+            this.btnCreate.Text = "Add Game";
+            this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
+            // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -83,6 +137,11 @@ namespace GamesSystem.View
             this.BackgroundImage = global::GamesSystem.Properties.Resources.Background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnCreate);
+            this.Controls.Add(this.txtPrice);
+            this.Controls.Add(this.txtName);
+            this.Controls.Add(this.lblPrice);
+            this.Controls.Add(this.lblName);
             this.Controls.Add(this.dgvGames);
             this.Name = "MainView";
             this.Text = "MainView";
@@ -90,6 +149,7 @@ namespace GamesSystem.View
             ((System.ComponentModel.ISupportInitialize)(this.dgvGames)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gameBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -100,5 +160,10 @@ namespace GamesSystem.View
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource gameBindingSource;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label lblPrice;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.TextBox txtPrice;
+        private System.Windows.Forms.Button btnCreate;
     }
 }
